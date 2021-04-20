@@ -12,9 +12,9 @@
 }
 
 @media (max-width: 350px) {
-    .profile__name{
-    font-style: normal;
-    font-size: 27px;
-    line-height: 33px;
+    .profile__name {
+        font-style: normal;
+        font-size: 27px;
+        line-height: 33px;
     }
 }

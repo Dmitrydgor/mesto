@@ -14,7 +14,7 @@
 }
 
 @media (max-width: 440px) {
-    .popup__close{
+    .popup__close {
         width: 26px;
         height: 26px;
         margin-bottom: 13.62px;

@@ -12,13 +12,13 @@
 }
 
 @media (max-width: 879px) {
-    .profile__job{
+    .profile__job {
         text-align: center;
     }
 }
 
 @media (max-width: 350px) {
-    .profile__job{
+    .profile__job {
         font-size: 14px;
         line-height: 17px;
     }

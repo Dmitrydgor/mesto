@@ -19,7 +19,7 @@
 }
 
 @media (max-width: 440px) {
-    .input__submit-btn{
+    .input__submit-btn {
         width: 238px;
         height: 46px;
     }
