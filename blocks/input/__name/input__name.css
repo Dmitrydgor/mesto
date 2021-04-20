@@ -1,0 +1,13 @@
+.input__name {
+    max-width: 358px;
+    height: 27px;
+    padding: 0;
+    margin: 54px 0 30px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    outline: none;
+}

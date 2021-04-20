@@ -1,0 +1,19 @@
+.popup__edit-profile {
+    display: flex;
+    flex-direction: column;
+    width: 430px;
+    height: 330px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    z-index: 1;
+    padding: 34px 36px 37px 36px;
+}
+
+@media (max-width: 440px) {
+    .popup__edit-profile{
+        width: 282px;
+        height: 322px;
+        padding: 25px 22px;
+    }
+}

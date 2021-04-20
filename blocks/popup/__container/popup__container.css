@@ -1,0 +1,13 @@
+.popup__container {
+    width: 510px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 440px) {
+    .popup__container{
+        width: 282px;
+    }
+}
