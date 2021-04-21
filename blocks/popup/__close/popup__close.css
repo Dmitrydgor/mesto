@@ -8,7 +8,7 @@
     align-self: flex-end;
     border: none;
     outline: none;
-    background-size: 170%;
+    background-size: 140%;
 }
 
 .popup__close:hover {
@@ -21,6 +21,7 @@
     .popup__close {
         width: 26px;
         height: 26px;
-        right: 0;
+        right: 4px;
+        top: -45px;
     }
 }
