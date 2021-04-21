@@ -1,10 +1,14 @@
 .popup__close {
+    position: absolute;
+    top: -40px;
+    right: -40px;
     width: 40px;
     height: 40px;
     background: url(../../../images/close-icon.svg) center no-repeat;
     align-self: flex-end;
     border: none;
     outline: none;
+    background-size: 170%;
 }
 
 .popup__close:hover {
@@ -13,10 +17,10 @@
     cursor: pointer;
 }
 
-@media (max-width: 440px) {
+@media (max-width: 520px) {
     .popup__close {
         width: 26px;
         height: 26px;
-        margin-bottom: 13.62px;
+        right: 0;
     }
 }

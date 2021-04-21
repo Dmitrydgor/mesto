@@ -1,7 +1,9 @@
 .profile__avatar {
     width: 120px;
+    height: 120px;
     border-radius: 50%;
     margin: 40px 0 51px;
+    object-fit: cover
 }
 
 @media (max-width: 879px) {

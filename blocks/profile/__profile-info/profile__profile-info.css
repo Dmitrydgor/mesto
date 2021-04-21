@@ -8,8 +8,8 @@
 
 @media (max-width: 879px) {
     .profile__profile-info {
-        margin: 0 37px 36px 63px;
-        row-gap: 14px;
+        margin: 0 37px 33px 63px;
+        row-gap: 7px;
         column-gap: 10px;
     }
 }
