@@ -4,12 +4,12 @@
     grid-template-columns: auto auto;
     column-gap: 18px;
     margin-left: 30px;
+    row-gap: 7px;
 }
 
 @media (max-width: 879px) {
     .profile__profile-info {
         margin: 0 37px 33px 63px;
-        row-gap: 7px;
         column-gap: 10px;
     }
 }
