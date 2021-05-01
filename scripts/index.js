@@ -6,6 +6,9 @@ let nameInput = document.querySelector('.popup__input_data_user-name');
 let jobInput = document.querySelector('.popup__input_data_job');
 let profileName = document.querySelector('.profile__name');
 let profileJob = document.querySelector('.profile__job');
+const openNewLocationButton = document.querySelector('.profile__add-button');
+const newLocation = document.querySelector('.new-location');
+const closeNewLocationButton = newLocation.querySelector('.popup__close');
 
 function togglePopupOpen() {
     popup.classList.toggle('popup_opened');
@@ -24,6 +27,16 @@ function formSubmitHandler(event) {
     togglePopupClose();
 }
 
+function newLocationOpen() {
+    newLocation.classList.toggle('popup_opened');
+}
+
+function newLocationClose() {
+    newLocation.classList.toggle('popup_opened');
+}
+
 openPopupButton.addEventListener('click', togglePopupOpen);
 closePopupButton.addEventListener('click', togglePopupClose);
 formElement.addEventListener('submit', formSubmitHandler);
+openNewLocationButton.addEventListener('click', newLocationOpen);
+closeNewLocationButton.addEventListener('click', newLocationClose);
