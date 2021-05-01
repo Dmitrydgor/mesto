@@ -1,4 +1,5 @@
 .popup {
+    height: 0;
     font-family: 'Inter', Arial, sans-serif;
     align-items: center;
     justify-content: center;
@@ -8,5 +9,9 @@
     right: 0;
     bottom: 0;
     left: 0;
-    display: none;
+    opacity: 0;
+    transition-property: opacity, height;
+    transition-duration: 1s, 0s;
+    transition-delay: 0s, 1s;
+    display: flex;
 }
