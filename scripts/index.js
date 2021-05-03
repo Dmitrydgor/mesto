@@ -1,16 +1,19 @@
-let openPopupButton = document.querySelector('.profile__edit-button');
-let popup = document.querySelector('.popup');
-let closePopupButton = document.querySelector('.popup__close');
-let formElement = document.querySelector('.popup__form');
-let nameInput = document.querySelector('.popup__input_data_user-name');
-let jobInput = document.querySelector('.popup__input_data_job');
-let profileName = document.querySelector('.profile__name');
-let profileJob = document.querySelector('.profile__job');
+const openPopupButton = document.querySelector('.profile__edit-button');
+const popup = document.querySelector('.popup');
+const closePopupButton = document.querySelector('.popup__close'); 
+const editForm = document.querySelector('.edit-profile__form');
+const newLocationForm = document.querySelector('.new-location__form');
+const nameInput = document.querySelector('.popup__input_data_user-name');
+const jobInput = document.querySelector('.popup__input_data_job');
+const profileName = document.querySelector('.profile__name');
+const profileJob = document.querySelector('.profile__job');
 const openNewLocationButton = document.querySelector('.profile__add-button');
 const newLocation = document.querySelector('.new-location');
 const closeNewLocationButton = newLocation.querySelector('.popup__close');
 const galleryList = document.querySelector('.gallery__elements');
 const elementTemplate = document.querySelector('.template-element').content;
+const locationName = document.querySelector('.popup__input_data_location-name');
+const locationLink = document.querySelector('.popup__input_data_link');
 //массив имена фотографий и ссылок к ним
 const initialCards = [
     {
@@ -60,7 +63,7 @@ function togglePopupClose() {
     popup.classList.toggle('popup_opened');
 }
 //сохранение с закрытием формы редактирования профиля
-function formSubmitHandler(event) {
+function profileFormSubmitHandler(event) {
     event.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
@@ -74,9 +77,21 @@ function newLocationOpen() {
 function newLocationClose() {
     newLocation.classList.toggle('popup_opened');
 }
+//сохранение с закрытием формы добавления фото
+function newLocationFormSubmitHandler(event) {
+    event.preventDefault();
+    const newGalleryElement = elementTemplate.cloneNode(true);
+    newGalleryElement.querySelector('.element__photo').src = locationLink.value;
+    newGalleryElement.querySelector('.element__photo-title').textContent = locationName.value;
+    newGalleryElement.querySelector('.element__photo').alt = locationName.value;
+    galleryList.append(newGalleryElement);
+    event.target.reset();
+    newLocationClose();
+}
 //слушаем кнопки
 openPopupButton.addEventListener('click', togglePopupOpen);
 closePopupButton.addEventListener('click', togglePopupClose);
-formElement.addEventListener('submit', formSubmitHandler);
+editForm.addEventListener('submit', profileFormSubmitHandler);
 openNewLocationButton.addEventListener('click', newLocationOpen);
 closeNewLocationButton.addEventListener('click', newLocationClose);
+newLocationForm.addEventListener('submit', newLocationFormSubmitHandler);
