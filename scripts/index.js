@@ -14,6 +14,8 @@ const galleryList = document.querySelector('.gallery__elements');
 const elementTemplate = document.querySelector('.template-element').content;
 const locationName = document.querySelector('.popup__input_data_location-name');
 const locationLink = document.querySelector('.popup__input_data_link');
+const viewPhoto = document.querySelector('.popup-photo');
+const closePhotoButton = viewPhoto.querySelector('.popup__close');
 //массив имена фотографий и ссылок к ним
 const initialCards = [
     {
@@ -53,7 +55,21 @@ function insertingСards(el) {
     elementLike.addEventListener('click', () => elementLike.classList.toggle('element__like_active'));
     const trashElement = galleryElement.querySelector('.element__trash');
     trashElement.addEventListener('click', deleteElement);
+    const openPhotoButton = galleryElement.querySelector('.element__photo');
+    function viewPhotoOpen() {
+      viewPhoto.classList.add('popup_opened');
+      viewPhoto.querySelector('.popup__photo').src = el.link;
+      viewPhoto.querySelector('.popup-photo__title').textContent = el.name;
+      viewPhoto.querySelector('.popup__photo').alt = el.name;
+    }
+    openPhotoButton.addEventListener('click', viewPhotoOpen);
+    closePhotoButton.addEventListener('click', viewPhotoClose);
     galleryList.append(galleryElement);
+
+}
+//открываем и закрываем фото
+function viewPhotoClose() {
+  viewPhoto.classList.remove('popup_opened');
 }
 //открываем и закрываем форму редактирования профиля
 function togglePopupOpen() {
