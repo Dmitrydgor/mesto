@@ -49,7 +49,10 @@ function insertingСards(el) {
     galleryElement.querySelector('.element__photo').src = el.link;
     galleryElement.querySelector('.element__photo-title').textContent = el.name;
     galleryElement.querySelector('.element__photo').alt = el.name;
-    
+    const elementLike = galleryElement.querySelector('.element__like');
+    elementLike.addEventListener('click', () => elementLike.classList.toggle('element__like_active'));
+    const trashElement = galleryElement.querySelector('.element__trash');
+    trashElement.addEventListener('click', deleteElement);
     galleryList.append(galleryElement);
 }
 //открываем и закрываем форму редактирования профиля
@@ -87,6 +90,15 @@ function newLocationFormSubmitHandler(event) {
     galleryList.append(newGalleryElement);
     event.target.reset();
     newLocationClose();
+}
+//ставим лайк
+function likeElement() {
+  elementLike.target.classList.toggle('element__like_active');
+  console.log(likeElement);
+}
+//удаление карточки
+function deleteElement(e) {
+  e.target.closest('.element').remove();
 }
 //слушаем кнопки
 openPopupButton.addEventListener('click', togglePopupOpen);
