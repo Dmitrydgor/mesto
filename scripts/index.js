@@ -47,25 +47,24 @@ const initialCards = [
 initialCards.forEach(insertingСards);
 //заполняем карточки данными
 function insertingСards(el) {
-    const galleryElement = elementTemplate.cloneNode(true);
-    galleryElement.querySelector('.element__photo').src = el.link;
-    galleryElement.querySelector('.element__photo-title').textContent = el.name;
-    galleryElement.querySelector('.element__photo').alt = el.name;
-    const elementLike = galleryElement.querySelector('.element__like');
-    elementLike.addEventListener('click', () => elementLike.classList.toggle('element__like_active'));
-    const trashElement = galleryElement.querySelector('.element__trash');
-    trashElement.addEventListener('click', deleteElement);
-    const openPhotoButton = galleryElement.querySelector('.element__photo');
-    function viewPhotoOpen() {
-      viewPhoto.classList.add('popup_opened');
-      viewPhoto.querySelector('.popup__photo').src = el.link;
-      viewPhoto.querySelector('.popup-photo__title').textContent = el.name;
-      viewPhoto.querySelector('.popup__photo').alt = el.name;
-    }
-    openPhotoButton.addEventListener('click', viewPhotoOpen);
-    closePhotoButton.addEventListener('click', viewPhotoClose);
-    galleryList.append(galleryElement);
-
+  const galleryElement = elementTemplate.cloneNode(true);
+  galleryElement.querySelector('.element__photo').src = el.link;
+  galleryElement.querySelector('.element__photo-title').textContent = el.name;
+  galleryElement.querySelector('.element__photo').alt = el.name;
+  const elementLike = galleryElement.querySelector('.element__like');
+  elementLike.addEventListener('click', () => elementLike.classList.toggle('element__like_active'));
+  const trashElement = galleryElement.querySelector('.element__trash');
+  trashElement.addEventListener('click', deleteElement);
+  const openPhotoButton = galleryElement.querySelector('.element__photo');
+  function viewPhotoOpen() {
+    viewPhoto.classList.add('popup_opened');
+    viewPhoto.querySelector('.popup__photo').src = el.link;
+    viewPhoto.querySelector('.popup-photo__title').textContent = el.name;
+    viewPhoto.querySelector('.popup__photo').alt = el.name;
+  }
+  openPhotoButton.addEventListener('click', viewPhotoOpen);
+  closePhotoButton.addEventListener('click', viewPhotoClose);
+  galleryList.append(galleryElement);
 }
 //открываем и закрываем фото
 function viewPhotoClose() {
@@ -73,39 +72,39 @@ function viewPhotoClose() {
 }
 //открываем и закрываем форму редактирования профиля
 function togglePopupOpen() {
-    popup.classList.toggle('popup_opened');
-    nameInput.value = profileName.textContent;
-    jobInput.value = profileJob.textContent;
+  popup.classList.toggle('popup_opened');
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileJob.textContent;
 }
 
 function togglePopupClose() {
-    popup.classList.toggle('popup_opened');
+  popup.classList.toggle('popup_opened');
 }
 //сохранение с закрытием формы редактирования профиля
 function profileFormSubmitHandler(event) {
-    event.preventDefault();
-    profileName.textContent = nameInput.value;
-    profileJob.textContent = jobInput.value;
-    togglePopupClose();
+  event.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileJob.textContent = jobInput.value;
+  togglePopupClose();
 }
 //открываем и закрываем форму добавления фотографий
 function newLocationOpen() {
-    newLocation.classList.toggle('popup_opened');
+  newLocation.classList.toggle('popup_opened');
 }
 
 function newLocationClose() {
-    newLocation.classList.toggle('popup_opened');
+  newLocation.classList.toggle('popup_opened');
 }
 //сохранение с закрытием формы добавления фото
 function newLocationFormSubmitHandler(event) {
-    event.preventDefault();
-    const newGalleryElement = elementTemplate.cloneNode(true);
-    newGalleryElement.querySelector('.element__photo').src = locationLink.value;
-    newGalleryElement.querySelector('.element__photo-title').textContent = locationName.value;
-    newGalleryElement.querySelector('.element__photo').alt = locationName.value;
-    galleryList.append(newGalleryElement);
-    event.target.reset();
-    newLocationClose();
+  event.preventDefault();
+  const newGalleryElement = elementTemplate.cloneNode(true);
+  newGalleryElement.querySelector('.element__photo').src = locationLink.value;
+  newGalleryElement.querySelector('.element__photo-title').textContent = locationName.value;
+  newGalleryElement.querySelector('.element__photo').alt = locationName.value;
+  galleryList.append(newGalleryElement);
+  event.target.reset();
+  newLocationClose();
 }
 //ставим лайк
 function likeElement() {
