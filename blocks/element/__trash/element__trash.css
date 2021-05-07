@@ -8,6 +8,7 @@
     margin: 18px 15px 0 0;
     outline: none;
 }
+
 .element__trash:hover {
     transition: opacity linear 0.3s;
     opacity: 0.5;
